@@ -3,11 +3,10 @@ import random
 
 #Global Variables
 
+grid = int(input('Select even number grid size: '))
 gridsquared = grid * grid
 pair_count = int(gridsquared / 2)
 
-print('Select grid size (use 2 for this demo)')
-grid = int(input())
 print('Grid size of ' + str(grid) + 'x' + str(grid) + ' chosen')
 
 ##Initialize Game Board
@@ -33,11 +32,9 @@ print(hidden_matrix)
 
 def pick_cell():
         
-    print('Select a column:')
-    col_select1 = int(input()) - 1
+    col_select1 = int(input('Select a column: ')) - 1
 
-    print('Select a row:')
-    row_select1 = int(input()) - 1
+    row_select1 = int(input('Select a row: ')) - 1
     
     reveal_value1 = shuffle_matrix[row_select1][col_select1]
     
@@ -45,11 +42,9 @@ def pick_cell():
 
     print(hidden_matrix)
 
-    print('Select a column:')
-    col_select2 = int(input()) - 1
+    col_select2 = int(input('Select a column: ')) - 1
 
-    print('Select a row:')
-    row_select2 = int(input()) - 1
+    row_select2 = int(input('Select a row: ')) - 1
     
     reveal_value2 = shuffle_matrix[row_select2][col_select2]
     
@@ -57,11 +52,10 @@ def pick_cell():
     
     print(hidden_matrix)
     
-    print("Hit any key to confirm")
-    input()
+    input('Hit any key to confirm')
     
     if shuffle_matrix[row_select1][col_select1] != shuffle_matrix[row_select2][col_select2]:
-        print("No Match")
+        print('No Match')
         hidden_matrix[row_select1][col_select1] = 0
         hidden_matrix[row_select2][col_select2] = 0
     
@@ -70,4 +64,4 @@ def pick_cell():
 while (0 in hidden_matrix):
     pick_cell()
     
-print("You win!")
+print('********** You win! **********')
